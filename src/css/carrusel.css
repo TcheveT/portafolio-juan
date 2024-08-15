@@ -1,0 +1,75 @@
+/* ImageCarousel.css */
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+    
+}
+
+.carousel-container {
+  position: relative;
+  text-align: center;
+}
+  
+.carousel-image {
+    max-width: 90%;
+    max-height: 80vh;
+    margin-bottom: 20px;
+}
+  
+.carousel-thumbnails {
+    display: flex;
+    justify-content: center;
+    
+}
+
+  
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  margin: 0 10px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.thumbnail.selected,
+.thumbnail:hover {
+  opacity: 1;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+.img-salir {
+  position: absolute;
+  top: -55px;
+  right: 42px;
+  width: 35px;
+  height: 35px;
+}
+
+.img-salir:hover {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+.img-salir:active {
+  width: 34px;
+  height: 34px;
+}
+@media only screen and (max-width: 480px) {
+  .img-salir {
+    position: absolute;
+    top: -75px;
+    right: 12px;
+  }
+ 
+
+}
