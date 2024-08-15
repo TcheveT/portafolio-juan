@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/github.io/juan-portafolio/build/static/css/main.53b524f9.css",
+    "main.js": "/github.io/juan-portafolio/build/static/js/main.21c15e45.js",
+    "static/js/453.7d1ffe6d.chunk.js": "/github.io/juan-portafolio/build/static/js/453.7d1ffe6d.chunk.js",
+    "static/media/universo.jpg": "/github.io/juan-portafolio/build/static/media/universo.c81f7b30d1f942e65d6f.jpg",
+    "static/media/cheve.png": "/github.io/juan-portafolio/build/static/media/cheve.f85ffa44c840bafbb09b.png",
+    "static/media/codeBack.jpg": "/github.io/juan-portafolio/build/static/media/codeBack.efbad84c51d784f3184f.jpg",
+    "static/media/sunny.png": "/github.io/juan-portafolio/build/static/media/sunny.95d369aa9ec0f78b31b6.png",
+    "static/media/registro.png": "/github.io/juan-portafolio/build/static/media/registro.c9ce70035407a944f9c2.png",
+    "static/media/electron.png": "/github.io/juan-portafolio/build/static/media/electron.ab48d34d6f1f759ec803.png",
+    "static/media/inicioSistema.png": "/github.io/juan-portafolio/build/static/media/inicioSistema.dce906c09d550fb5b441.png",
+    "static/media/graficas.png": "/github.io/juan-portafolio/build/static/media/graficas.5655b99cee1b016ac285.png",
+    "static/media/appClima.png": "/github.io/juan-portafolio/build/static/media/appClima.4df5656bfec0b18e43ad.png",
+    "static/media/codeSmall.jpg": "/github.io/juan-portafolio/build/static/media/codeSmall.099388e32baceb823b43.jpg",
+    "static/media/trivia.png": "/github.io/juan-portafolio/build/static/media/trivia.88b4d155477aca4ec1ba.png",
+    "static/media/muwieri.png": "/github.io/juan-portafolio/build/static/media/muwieri.f49236ac34edd0f47a80.png",
+    "static/media/iniciarSe.png": "/github.io/juan-portafolio/build/static/media/iniciarSe.5608610b59f99ae8dd5d.png",
+    "index.html": "/github.io/juan-portafolio/build/index.html",
+    "main.53b524f9.css.map": "/github.io/juan-portafolio/build/static/css/main.53b524f9.css.map",
+    "main.21c15e45.js.map": "/github.io/juan-portafolio/build/static/js/main.21c15e45.js.map",
+    "453.7d1ffe6d.chunk.js.map": "/github.io/juan-portafolio/build/static/js/453.7d1ffe6d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.53b524f9.css",
+    "static/js/main.21c15e45.js"
+  ]
+}
