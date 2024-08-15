@@ -1,6 +1,7 @@
 // ImageCarousel.jsx
 import React, { useState, useEffect } from 'react';
 import '../../css/carrusel.css';
+
 import imgSalir from '../../images/salir.png'
 
 const ImageCarousel = ({ images, isOpen, onClose }) => {
