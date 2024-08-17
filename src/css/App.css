@@ -342,7 +342,7 @@
     display: flex;
     position: relative;
     align-items: center;
-    justify-content: center;
+    
     flex-direction: column;
 }
 .experiencia h2{
@@ -350,6 +350,7 @@
     text-align: center;
     margin-bottom: 44px;
     color:#2271F0;
+    margin-top: 100px;
 }
 .experiencia h2 b {
     letter-spacing: 3px;
@@ -833,10 +834,12 @@ footer img{
     }
     .frontend-dev {
         padding: 2px;
+        justify-content:center;
+        gap: 50px;
     }
     .frontend-dev figure {
-        height: 250px;
-        width: 250px;
+        height: 300px;
+        width: 300px;
     }
 
     .frontend-dev p{

@@ -276,7 +276,7 @@ function App() {
           <figure>
             <img src={imgDeve }></img>
           </figure>
-          <h2>Nivel en Tecnologias</h2>
+          <h2>Skills</h2>
         </div>
         <div className='contenedor-lenguajes'>
           {/* <h3>Tecnologias Que Practico</h3> */}
