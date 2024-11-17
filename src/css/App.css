@@ -82,7 +82,42 @@
     
     
 }
+.menu-icon {
+  width: 27px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: fixed;
+  top: 35px;
+  right: 50px;
+  z-index: 1100;
+}
+.icon-bug {
+    border-radius: 50%;
+    object-fit: cover;
+}
+.menu-icon span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #F59C38;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
 
+.menu-icon.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 .frontend-dev {
     height: 100%;
     width: 100%;
@@ -723,6 +758,8 @@
     align-items: center;
     border-radius: 25px;
     border: 2px solid #9301f5;
+    transition: background-color 0.7s ease-in;
+    
 }
 .caja-hagamoslo p{
     font-size: 18px;
@@ -738,7 +775,7 @@
     cursor: pointer;
 }
 footer {
-    height: 300px;
+    height: 250px;
     width: 100%;
     background-color:#2271F0;
     display: flex;
@@ -800,6 +837,22 @@ footer img{
     /* transform: translateY(-80px);
     transition: transform 0.7s ease-out; */ 
 }
+.realizado-fecha, .correo-footer, footer h3{
+    margin-top:48px;
+}
+.correo-footer {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    width: auto;
+    height: 25px;
+}
+.correo-footer img {
+    margin-right: 8px;
+}
+
 @media only screen and (min-width: 681px) and (max-width: 765px) {
     .caja-experiencia {
         width: 95%;
@@ -888,7 +941,7 @@ footer img{
     }
     .experiencia {
         background-image: url('../images/codeSmall.jpg');
-        height: 1400px;
+        height: 1500px;
     }
     .experiencia h2 {
         color: white;
@@ -991,3 +1044,4 @@ footer img{
 
 
 }
+

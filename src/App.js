@@ -5,6 +5,7 @@ import imgEstudio from './images/university.png'
 import imgHtml from './images/html.png'
 import imgJs from './images/javasc.png'
 import imgReact from './images/react.png'
+import imgBug from './images/bugs.jpg'
 import imgNode from './images/node.png'
 import imgCss from './images/css.png'
 import imgDeve from './images/desarrollo.png'
@@ -41,11 +42,13 @@ const images = [
   imgRegistro
 ];
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
   const contentRefs = useRef([]);
   const [escritorioVisible, setEscritorioVisible] = useState(false);
   const [vistaPlataforma,   setVistaPlataforma]   = useState(false);
   const [vistaMovil,        setVistaMovil]        = useState(false);
+  const [vistaWeb,          setVistaWeb]          = useState(false);
   const [vistaLaptop,       setVistaLaptop]       = useState(false);
   const [isCarouselOpen,    setIsCarouselOpen]    = useState(false);
   const [hoverProyecto,     setHoverProyecto]     = useState(false);
@@ -64,7 +67,7 @@ function App() {
       if (top <= windowHeight) {
         
         setTimeout(() => {
-          setEscritorioVisible(true)
+          setVistaWeb(true)
         }, 300)
         window.removeEventListener('scroll', handleScroll);
       }
@@ -81,10 +84,11 @@ function App() {
   }, []);
   const controlVistasExperiencia = (proyecto) =>{
 
-    setVistaPlataforma(proyecto === 'plataforma' ?   !vistaPlataforma: false);
+    setVistaPlataforma(proyecto   === 'plataforma' ? !vistaPlataforma: false);
     setEscritorioVisible(proyecto === 'escritorio' ? !escritorioVisible: false);
-    setVistaLaptop(proyecto === 'laptop' ? !vistaLaptop: false);
-    setVistaMovil(proyecto === 'movil' ? !vistaMovil: false);
+    setVistaLaptop(proyecto       === 'laptop'     ? !vistaLaptop: false);
+    setVistaMovil(proyecto        === 'movil'      ? !vistaMovil: false);
+    setVistaWeb(proyecto          === 'web'        ? !vistaWeb: false);
   }
   const openCarousel = () => {
     setIsCarouselOpen(true);
@@ -144,14 +148,14 @@ function App() {
         const gitHubBar = document.getElementById('myProgressBarGitHub');
         const sqlBar = document.getElementById('myProgressBarSql');
 
-        if (htmlBar) htmlBar.style.width = '80%';
-        if (cssBar) cssBar.style.width = '80%';
-        if (jsBar) jsBar.style.width = '50%';
-        if (elecBar) elecBar.style.width = '40%';
-        if (reactBar) reactBar.style.width = '20%';
-        if (nodeBar) nodeBar.style.width = '20%';
+        if (htmlBar) htmlBar.style.width     = '80%';
+        if (cssBar) cssBar.style.width       = '80%';
+        if (jsBar) jsBar.style.width         = '50%';
+        if (elecBar) elecBar.style.width     = '40%';
+        if (reactBar) reactBar.style.width   = '20%';
+        if (nodeBar) nodeBar.style.width     = '20%';
         if (gitHubBar) gitHubBar.style.width = '20%';
-        if (sqlBar) sqlBar.style.width = '20%';
+        if (sqlBar) sqlBar.style.width       = '20%';
       }
 
     };
@@ -162,6 +166,9 @@ function App() {
   
   const setRef = (ref, index) => {
     contentRefs.current[index] = ref;
+  };
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   useEffect(() => {
@@ -197,24 +204,28 @@ function App() {
           menuVisible ? 
             <nav className='menu-flotante'>
               <ul>
-                <li onClick={() => scrollMenu('presentacion-juan') }>
+                <li onClick={() => {scrollMenu('presentacion-juan'); toggleMenu() }}>
                   Presentación
                 </li>
-                <li onClick={() => scrollMenu('habilidades-juan') } >
+                <li onClick={() => {scrollMenu('habilidades-juan'); toggleMenu()}  } >
                   Habilidades
                 </li>
-                <li onClick={() => scrollMenu('seccion-proyecto') }>
+                <li onClick={() => {scrollMenu('seccion-proyecto'); toggleMenu()}  }>
                   Experiencia
                 </li>
-                <li onClick={() => scrollMenu('proyectos-juan') }>
+                <li onClick={() => {scrollMenu('proyectos-juan');   toggleMenu()}  }>
                   Proyectos
                 </li>
               </ul>
             </nav>
             : ''
         }
-        
-        <img src={!menuVisible ? gifMenu : imgSalirX} onClick={() => setMenuVisible(!menuVisible)}></img>
+         <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={()=> {toggleMenu(); setMenuVisible(!menuVisible) }}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        {/*<img src={!menuVisible ? gifMenu : imgSalirX} onClick={() => setMenuVisible(!menuVisible)}></img>*/}
     </header>
       <div className='frontend-dev'>
       
@@ -435,6 +446,58 @@ function App() {
       }
       
         <h2 ><b>Experiencia</b> <br></br> Profesional</h2>
+
+        <div className='caja-experiencia'>
+          <div className='caja-experiencia-head'>
+            <p>Desarrollo de Sitio Web</p>
+            {/* <p>Muwieri</p> */}
+            <p>Septiembre 2024</p>
+            <img src={!vistaWeb ? imgMas :imgMenos} onClick={()=> controlVistasExperiencia('web') }></img>
+          </div>
+          <div className={` caja-experiencia-body  ${vistaWeb ? 'caja-experiencia-visible' :''}`}>
+            <div className='caja-division'>
+              <div className='caja-experiencia-acotaciones'>
+                <div className='caja-lista-acotaciones'>
+                  <img src={imgUbicacion}></img> 
+                  <p>BugStudio</p> 
+                </div> 
+                <p>Freelance</p>
+                <div className='caja-lista-acotaciones'>
+                  <img src={imgLink}></img> 
+                  <a href="https://bugstudiomx.com/" target="_blank">Ver Proyecto</a>
+                </div>
+                
+              </div>
+              <b>Objetivo: </b>
+              <p className='texto-informacion'>
+              Crear una página web estática para una agencia de marketing que se adapte a las distintas resoluciones
+              de dispositivos modernos, mostrando sus servicios y un formulario de contacto que envía mensajes
+              a través de WhatsApp.
+              </p><br></br>
+              <b>Tareas Realizadas:</b>
+              <p className='lista-tareas'>-Desarrollo desde cero.</p>
+              <p className='lista-tareas'>-Implementación de diseño responsivo para adaptarse a distintos dispositivos.</p>
+              <p className='lista-tareas'>-Configuración de un formulario que envía mensajes a WhatsApp.</p>
+              <p className='lista-tareas'>-Pruebas de compatibilidad y rendimiento.</p>
+              <p className='lista-tareas'>-Publicación del sitio utilizando Hostinger.</p>
+              <br></br>
+              
+              
+              <div className='caja-experiencia-tecnologias'>
+                <p>JavaScript</p>
+                <p>React</p>
+                <p>HTML</p>
+                <p>CSS</p>
+
+              </div>
+
+            </div>
+            <figure className='img-app'> 
+              <img className='icon-bug'  src={imgBug}></img>
+              <figcaption></figcaption>
+            </figure>
+          </div>
+        </div>
 
         <div className='caja-experiencia' >
           <div className='caja-experiencia-head' >
@@ -787,8 +850,13 @@ function App() {
     </div>
     <footer>
       <h3>JPEH</h3>
-      <img src={imgEmailBlanco} onClick={enviarEmail}></img>
-      <p>Realizado en 2024</p>
+      <div className='correo-footer' onClick={enviarEmail}>
+        <img src={imgEmailBlanco} ></img>
+        <p>juanecheveste9@gmail.com</p>
+        
+      </div>
+      
+      <p className='realizado-fecha'>Realizado en 2024</p>
     </footer>
    </>
   );
