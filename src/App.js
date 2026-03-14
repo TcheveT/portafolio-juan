@@ -67,7 +67,7 @@ function App() {
       if (top <= windowHeight) {
         
         setTimeout(() => {
-          setVistaWeb(true)
+          setEscritorioVisible(true)
         }, 300)
         window.removeEventListener('scroll', handleScroll);
       }
@@ -151,11 +151,11 @@ function App() {
         if (htmlBar) htmlBar.style.width     = '80%';
         if (cssBar) cssBar.style.width       = '80%';
         if (jsBar) jsBar.style.width         = '50%';
-        if (elecBar) elecBar.style.width     = '40%';
-        if (reactBar) reactBar.style.width   = '20%';
-        if (nodeBar) nodeBar.style.width     = '20%';
-        if (gitHubBar) gitHubBar.style.width = '20%';
-        if (sqlBar) sqlBar.style.width       = '20%';
+        if (elecBar) elecBar.style.width     = '50%';
+        if (reactBar) reactBar.style.width   = '40%';
+        if (nodeBar) nodeBar.style.width     = '30%';
+        if (gitHubBar) gitHubBar.style.width = '40%';
+        if (sqlBar) sqlBar.style.width       = '40%';
       }
 
     };
@@ -252,10 +252,10 @@ function App() {
           en las tecnologías de la web, aunque siempre estoy abierto a aprender y 
           explorar nuevas tecnologías.
         </p>
-        <p ref={(ref) => setRef(ref, 3)}>
+        {/* <p ref={(ref) => setRef(ref, 3)}>
           Actualmente, estoy en búsqueda de empleo en el área de tecnología. En mi tiempo 
           libre, disfruto ver deportes, películas y jugar videojuegos.
-        </p> 
+        </p>  */}
       </div>
     </div>
     <div className='mis-habilidades'>
@@ -273,7 +273,7 @@ function App() {
           <p>2017 - 2023</p>
         </div>
         <div className='contenedor-info'>
-          <h3>Ingles Básico</h3>
+          <h3>Ingles Intermedio</h3>
           <p>Vocablo Idiomas Tepic</p>
         </div>
         <div className='contenedor-info'>
@@ -354,7 +354,7 @@ function App() {
               barrasVisible ?
                 <div className="progress-container">
                   <div className="progress-bar" id="myProgressBarElec"></div>
-                  <p className="progress-text">40%</p>
+                  <p className="progress-text">50%</p>
                 </div>
               :''
             }
@@ -373,7 +373,7 @@ function App() {
               barrasVisible ?
                 <div className="progress-container">
                   <div className="progress-bar" id="myProgressBarReact"></div>
-                  <p className="progress-text">20%</p>
+                  <p className="progress-text">40%</p>
                 </div>
               : ''
             }
@@ -391,7 +391,7 @@ function App() {
               barrasVisible ? 
                 <div className="progress-container">
                 <div className="progress-bar" id="myProgressBarNode"></div>
-                <p className="progress-text" width={20}>20%</p>
+                <p className="progress-text" width={30}>30%</p>
                 </div>
               :''
             }
@@ -409,7 +409,7 @@ function App() {
               barrasVisible ? 
               <div className="progress-container">
                 <div className="progress-bar" id="myProgressBarGitHub"></div>
-                <p className="progress-text">20%</p>
+                <p className="progress-text">40%</p>
               </div>
               : ''
             }
@@ -427,7 +427,7 @@ function App() {
               barrasVisible ?
                 <div className="progress-container">
                   <div className="progress-bar" id="myProgressBarSql"></div>
-                  <p className="progress-text">20%</p>
+                  <p className="progress-text">40%</p>
                 </div>
               :''
             }
@@ -446,6 +446,65 @@ function App() {
       }
       
         <h2 ><b>Experiencia</b> <br></br> Profesional</h2>
+
+        <div className='caja-experiencia' >
+          <div className='caja-experiencia-head' >
+            <p  ref={containerRef}>Desarrollo de Sistema de Escritorio </p>
+            <p>Diciembre 2025 - Febrero 2026</p>
+            <img src={!escritorioVisible ? imgMas :imgMenos} onClick={() => controlVistasExperiencia('escritorio')}></img>
+          </div>
+          <div className={` caja-experiencia-body  ${escritorioVisible ? 'caja-experiencia-body caja-experiencia-visible' :''} `}>
+            <div className='caja-division' >
+              <div className='caja-experiencia-acotaciones' >
+                  {/* <img src={imgUbicacion}></img> 
+                  <p>CICESE-UT3</p>  */}
+                <p>Freelance</p>
+                {/* <div className='caja-lista-acotaciones'>
+                  <img  src={imgLink}></img> 
+                  <a  className='carrusel-vista'  onClick={ (e) => {vistaScroll('seccion-proyecto', e);openCarousel()}} >Ver Proyecto</a>
+                </div> */}
+                
+              </div>
+              <b>Objetivo: </b>
+              <p className='texto-informacion'>
+                Sistema de escritorio desarrollado para gestionar y optimizar las operaciones de 
+                un autolavado, similar a un punto de venta.
+              </p><br></br>
+              <b>Contexto: </b>
+              <p>Proyecto personal desarrollado para su comercialización, 
+                destinado a mejorar la eficiencia y el control en autolavados.</p><br></br>
+              <b>Tareas Realizadas:</b>
+              <p className='lista-tareas'>-Desarrollo del sistema completo desde cero.</p>
+              <p className='lista-tareas'>-Creación e implementación de la base de datos.</p>
+              <p className='lista-tareas'>-Creación de la interfaz de usuario.</p>
+              <p className='lista-tareas'>-Pruebas exhaustivas.</p>
+              <br></br>
+              {/* <div className='contenedor-referencia'>
+                <p><b>Referencia:</b> Dr. Juan Martinez Miranda - Responsable técnico</p>
+                <figure className='img-email'>
+                  <a href="mailto:jmiranda@cicese.mx"><img  src={imgEmail}></img></a>
+                </figure>
+              </div> */}
+              
+              <div className='caja-experiencia-tecnologias'>
+                <p>JavaScript</p>
+                <p>Electron</p>
+                <p>React</p>
+                <p>JSX</p>
+                <p>CSS</p>
+                <p>SQLite</p>
+                <p>SweetAlert</p>
+                <p>Chart.js</p>
+              </div>
+
+            </div>
+            <figure className='img-app'> 
+              <img  src={imgCarro}></img>
+            </figure>
+            
+
+          </div>
+        </div>
 
         <div className='caja-experiencia'>
           <div className='caja-experiencia-head'>
@@ -499,64 +558,7 @@ function App() {
           </div>
         </div>
 
-        <div className='caja-experiencia' >
-          <div className='caja-experiencia-head' >
-            <p  ref={containerRef}>Desarrollo de Sistema de Escritorio </p>
-            <p>Septiembre 2023 - Abril 2024</p>
-            <img src={!escritorioVisible ? imgMas :imgMenos} onClick={() => controlVistasExperiencia('escritorio')}></img>
-          </div>
-          <div className={` caja-experiencia-body  ${escritorioVisible ? 'caja-experiencia-body caja-experiencia-visible' :''} `}>
-            <div className='caja-division' >
-              <div className='caja-experiencia-acotaciones' >
-                  {/* <img src={imgUbicacion}></img> 
-                  <p>CICESE-UT3</p>  */}
-                <p>Freelance</p>
-                <div className='caja-lista-acotaciones'>
-                  <img  src={imgLink}></img> 
-                  <a  className='carrusel-vista'  onClick={ (e) => {vistaScroll('seccion-proyecto', e);openCarousel()}} >Ver Proyecto</a>
-                </div>
-                
-              </div>
-              <b>Objetivo: </b>
-              <p className='texto-informacion'>
-                Sistema de escritorio desarrollado para gestionar y optimizar las operaciones de 
-                un autolavado, similar a un punto de venta.
-              </p><br></br>
-              <b>Contexto: </b>
-              <p>Proyecto personal desarrollado para su comercialización, 
-                destinado a mejorar la eficiencia y el control en autolavados.</p><br></br>
-              <b>Tareas Realizadas:</b>
-              <p className='lista-tareas'>-Desarrollo del sistema completo desde cero.</p>
-              <p className='lista-tareas'>-Creación e implementación de la base de datos.</p>
-              <p className='lista-tareas'>-Creación de la interfaz de usuario.</p>
-              <p className='lista-tareas'>-Pruebas exhaustivas.</p>
-              <br></br>
-              {/* <div className='contenedor-referencia'>
-                <p><b>Referencia:</b> Dr. Juan Martinez Miranda - Responsable técnico</p>
-                <figure className='img-email'>
-                  <a href="mailto:jmiranda@cicese.mx"><img  src={imgEmail}></img></a>
-                </figure>
-              </div> */}
-              
-              <div className='caja-experiencia-tecnologias'>
-                <p>JavaScript</p>
-                <p>Electron</p>
-                <p>React</p>
-                <p>JSX</p>
-                <p>CSS</p>
-                <p>SQLite</p>
-                <p>SweetAlert</p>
-                <p>Chart.js</p>
-              </div>
-
-            </div>
-            <figure className='img-app'> 
-              <img  src={imgCarro}></img>
-            </figure>
-            
-
-          </div>
-        </div>
+        
 
         <div className='caja-experiencia'>
           <div className='caja-experiencia-head'>
@@ -570,7 +572,7 @@ function App() {
               <div className='caja-experiencia-acotaciones'>
                 <div className='caja-lista-acotaciones'>
                   <img src={imgUbicacion}></img> 
-                  <p>CICESE-UT3</p> 
+                  <p>CICESE-UAT</p> 
                 </div> 
                 <p>Colaboración</p>
                 <div className='caja-lista-acotaciones'>
@@ -630,7 +632,7 @@ function App() {
               <div className='caja-experiencia-acotaciones'>
                 <div className='caja-lista-acotaciones'>
                   <img src={imgUbicacion}></img> 
-                  <p>CICESE-UT3</p>
+                  <p>CICESE-UAT</p>
                 </div>
                  
                 <p>Practicas Profesionales</p>
@@ -692,7 +694,7 @@ function App() {
               <div className='caja-experiencia-acotaciones'>
                 <div className='caja-lista-acotaciones'>
                   <img src={imgUbicacion}></img> 
-                  <p>CICESE-UT3</p>
+                  <p>CICESE-UAT</p>
                 </div>
                 
                 <p>Practicas Profesionales</p>
@@ -781,7 +783,7 @@ function App() {
         
       </div> 
 
-      <div onMouseOver={() => setHoverClima(true)} onMouseLeave={() => setHoverClima(false)} className='caja-proyectos' ref={(ref) => setRef(ref, 7)}>
+      {/* <div onMouseOver={() => setHoverClima(true)} onMouseLeave={() => setHoverClima(false)} className='caja-proyectos' ref={(ref) => setRef(ref, 7)}>
         <figure>
           <img src={imgClima}></img>
           {
@@ -800,12 +802,12 @@ function App() {
           <p className='titulo-proyecto'>Aplicación del Clima</p> 
           {/*         */}
           
-          {
+          {/* {
             hoverClima ? <p className='link-proyecto hover-underline' onClick={abrirClima}>Ver Proyecto</p> : ''
           }
-        </div>
+        </div> */}
         
-      </div> 
+      {/* </div>  */} 
 
       <div onMouseOver={() => setHoverTrivia(true)} onMouseLeave={() => setHoverTrivia(false)} className='caja-proyectos' ref={(ref) => setRef(ref, 8)}>
         <figure>
@@ -856,7 +858,7 @@ function App() {
         
       </div>
       
-      <p className='realizado-fecha'>Realizado en 2024</p>
+      <p className='realizado-fecha'>Realizado en 2026</p>
     </footer>
    </>
   );
